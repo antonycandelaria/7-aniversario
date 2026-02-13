@@ -1,0 +1,16 @@
+{
+  "name": "7 Años Contigo ❤️",
+  "short_name": "7 Años ❤️",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ff4f8b",
+  "theme_color": "#ff4f8b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/1.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

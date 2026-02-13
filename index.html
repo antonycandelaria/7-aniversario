@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Años Contigo ❤️</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- PANTALLA INICIAL -->
+<div id="intro">
+    <h1>✨ 7 Años Contigo ✨</h1>
+    <button onclick="entrar()">Entrar ❤️</button>
+</div>
+
+<div id="contenido">
+
+<div id="encabezado-container">
+  <div id="brillo">
+    ¡Feliz San Valentín y 7 Años Juntos! 💞
+  </div>
+</div>
+
+<!-- CONTADOR -->
+<div class="contador">
+  <h2>Tiempo juntos 💖</h2>
+  <p id="tiempo"></p>
+</div>
+
+<!-- CARRUSEL -->
+<div class="galeria">
+  <div class="galeria-track">
+    <img src="img/1.jpg">
+    <img src="img/2.jpg">
+    <img src="img/3.jpg">
+    <img src="img/4.jpg">
+    <img src="img/5.jpg">
+    <img src="img/1.jpg">
+    <img src="img/2.jpg">
+    <img src="img/3.jpg">
+    <img src="img/4.jpg">
+    <img src="img/5.jpg">
+  </div>
+</div>
+
+<!-- CARTA -->
+<div class="contenedor-carta">
+  <div class="carta" onclick="abrirCarta()">
+    <div class="tapa"></div>
+    <div class="contenido-carta">
+      <h2>Para Ti ❤️</h2>
+      <p>
+        Hoy celebramos San Valentín…  
+        pero también celebramos 7 años de amor y crecimiento juntos ✨  
+        <br><br>
+        Eres mi hogar, mi paz y mi felicidad 💖  
+        Y quiero seguir escribiendo nuestra historia contigo.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PROMESA -->
+<div class="promesa">
+  <button onclick="prometer()">💍 Prometo seguir contigo</button>
+  <p id="mensajePromesa"></p>
+</div>
+
+<!-- MÚSICA -->
+<div class="boton-musica">
+  <button onclick="toggleMusica()">🎵 Música</button>
+  <audio id="musica" loop>
+    <source src="J Balvin - Rio (Letra_Lyrics).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+</div>
+
+<script>
+
+function entrar(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("contenido").style.display="block";
+}
+
+function abrirCarta(){
+  document.querySelector(".carta").classList.toggle("abierta");
+}
+
+function toggleMusica(){
+  const musica=document.getElementById("musica");
+  musica.paused?musica.play():musica.pause();
+}
+
+function prometer(){
+  document.getElementById("mensajePromesa").innerHTML="💖 Siempre contigo, hoy y siempre 💖";
+}
+
+/* CONTADOR */
+const fechaInicio = new Date("2019-02-14"); // CAMBIA ESTA FECHA
+const hoy = new Date();
+const diferencia = hoy - fechaInicio;
+
+const dias = Math.floor(diferencia/(1000*60*60*24));
+const años = Math.floor(dias/365);
+
+document.getElementById("tiempo").innerHTML =
+años + " años y " + dias + " días juntos ❤️";
+
+/* DETECTAR CELULAR */
+if(window.innerWidth <= 768){
+  document.body.classList.add("movil");
+}
+
+</script>
+
+</body>
+</html>
